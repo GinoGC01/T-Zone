@@ -1,0 +1,186 @@
+---
+import PostsBlog from "./Posts-blog.astro";
+import SidebarBlog from "./Sidebar-blog.astro";
+
+---
+
+<main id="principal-content-blog">
+
+    <div class="principal-container">
+        <div class="redes-sociales">
+
+        </div>
+
+        <div class="post-blog">
+            <div class="news-container">
+                <h1>Recient News</h1>
+                <img src="../../../public/images/isotipo-TZone-white.svg" alt="isotipo T-zone">
+            </div>
+            <PostsBlog/>
+        </div>
+    
+        <div class="sidebar-blog">
+            <h2>Similar News</h2>
+            <SidebarBlog min={6} />
+        </div>
+    </div>
+    
+</main>
+
+<style>
+    
+    #principal-content-blog{
+        position: relative;
+        background-image: linear-gradient(90deg, rgb(0, 0, 0, .5),rgb(0, 0, 0, .6))
+		,url('../../public/images/Vector_2648.jpg');
+	    background-size: cover;
+        background-position: center;
+    }
+    
+    .principal-container{
+        position: relative;
+        margin: auto;
+        width: 70%;
+        padding-top: 100px;
+        height: 98%;
+        display: grid;
+        grid-template-columns: 1fr 20em;
+        grid-template-rows: 40px 1fr;
+        gap: 10px;
+    }
+
+    .redes-sociales{
+        grid-column: 1/3 ;
+    }
+
+    .post-blog{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        padding-bottom: 20px;
+    }
+
+    .news-container{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        padding: 5px 20px;
+        margin-left: 20px;
+    }
+
+    @keyframes isorotation{
+        from {rotate: 0deg;}
+        to {rotate:360deg;}
+    }
+
+    .news-container > img{
+        height: 50px;
+        animation-name: isorotation;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    .news-container > h1{
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 45px;
+        color: white;
+    }
+
+    .sidebar-blog{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: rgba(0, 0, 0, 0.2);
+        overflow: scroll;
+    }
+
+    .sidebar-blog > h2{
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        color: white;
+        margin: 15px;
+    }
+
+     /* width */
+     .post-blog::-webkit-scrollbar {
+    width: 10px;
+    height: 0px;
+    }
+
+    /* Track */
+    .post-blog::-webkit-scrollbar-track { 
+    border-radius: 10px;
+    }
+    
+    /* Handle */
+    .post-blog::-webkit-scrollbar-thumb {
+    background: rgb(94, 16, 167); 
+    border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    .post-blog::-webkit-scrollbar-thumb:hover {
+    background: rgb(67, 13, 117); 
+    }
+
+
+     /* width */
+     .sidebar-blog::-webkit-scrollbar {
+    width: 10px;
+    height: 0px;
+    }
+
+    /* Track */
+    .sidebar-blog::-webkit-scrollbar-track { 
+    border-radius: 10px;
+    }
+    
+    /* Handle */
+    .sidebar-blog::-webkit-scrollbar-thumb {
+    background: rgb(94, 16, 167); 
+    border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    .sidebar-blog::-webkit-scrollbar-thumb:hover {
+    background: rgb(67, 13, 117); 
+    }
+
+    @media (max-width: 430px){
+
+        .principal-container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            
+        }
+
+        .post-blog{
+            border-left: none;
+            border-right: none;
+        }
+
+        
+
+        .news-container{
+            align-items: flex-start;
+            padding: 10px 0;
+        }
+
+        .news-container > img{
+            display: none;
+        }
+
+        
+        .sidebar-blog{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            overflow: visible;
+        }
+        
+    }
+
+</style>

@@ -1,0 +1,117 @@
+---
+import Button from '../../components/Blog-Components/Button.astro';
+import RedesSociales from '../../components/Index-Components/RedesSociales.astro';
+---
+
+<main>
+    <div class="container__content-principal">
+        <h3>Welcome to</h3>
+        <div class="container__title-iso">
+            <h1>T-Zone</h1>
+            <img src="images/isotipo-TZone-white.svg" alt="isotipo-Tzone">
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, quo velit enim veniam dolore dolores illo sunt odio similique quidem molestias aliquid qui, nobis praesentium, eius modi neque omnis a.</p>
+        <div class="contact">
+            <Button href="#" claseB="no" text="CONTACT" claseA="default"/>
+            <Button href="#" claseB="no" text="More information" claseA="transparent default"/>
+        </div>
+    </div>
+    <RedesSociales/>
+</main>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Roboto', sans-serif;
+		list-style: none;
+		color: white;
+	}
+
+	main{
+		height: 100vh;
+		background-image: url('../images/Vector_2648.jpg');
+		background-size: cover;
+		
+	}
+
+	.container__content-principal{
+		position: relative;
+		top: 250px;
+		left: 180px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		width: 600px;
+	}
+
+	.container__content-principal > h3{
+		font-size: 65px;
+		text-transform: uppercase;
+		font-weight: 300;
+
+	}
+
+	.container__title-iso{
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.container__title-iso > img{
+		height: 70px;
+	}
+
+	.container__title-iso > h1{
+		font-size: 100px;
+	}
+
+	.container__content-principal > h3,.container__title-iso > h1,.container__title-iso > img{
+		filter: drop-shadow(3px 3px 0 rgb(73, 53, 185));
+	}
+
+	.container__content-principal > p{
+		font-size: 25px;
+		font-weight: 300;
+	}
+	.contact{
+		display: flex;
+		gap: 30px;
+		padding-top: 20px;
+	}
+
+@media (max-width: 430px){
+
+	main{
+		background-image: linear-gradient(
+			360deg, 
+			rgba(0, 0, 0, .7), 
+			rgba(0, 0, 0, .8))
+		,url('../../public/images/Vector_2648.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.container__content-principal{
+		left: 30px;
+		width: 91%;
+	}
+
+	.container__content-principal > h3{
+		font-size: 45px;
+	}
+
+	.container__title-iso > img{
+		height: 60px;
+	}
+	.container__title-iso > h1{
+		font-size: 65px;
+	}
+	.container__content-principal > p{
+		font-size: 22px;
+		font-weight: 300;
+	}
+
+	}
+
+</style>

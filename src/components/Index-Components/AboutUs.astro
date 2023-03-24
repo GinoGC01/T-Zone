@@ -1,0 +1,103 @@
+---
+
+---
+<section class="principal-container" id="AboutUs">
+    <h2>About Us</h2>
+    <div class="container-01">
+        <div class="text-container">
+            <h3>Title 01</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis eos molestias voluptates nisi eaque, neque porro commodi id sapiente, consequatur tempore adipisci laboriosam reprehenderit quam quaerat similique dolores ratione! Doloremque.</p>
+        </div>
+        <img src="../../../public/images/section-01-svg/proyect 04.svg" alt="">
+    </div>
+    <div class="container-02">
+        <div class="text-container">
+            <h3>Title 02</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis eos molestias voluptates nisi eaque, neque porro commodi id sapiente, consequatur tempore adipisci laboriosam reprehenderit quam quaerat similique dolores ratione! Doloremque.</p>
+        </div>
+        <img src="../../../public/images/section-01-svg/proyect 03.svg" alt="">
+    </div>
+</section>
+
+
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .principal-container{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .principal-container > h2 {
+        padding: 20px;
+        font-size: 50px;
+        filter: drop-shadow(3px 3px 0 rgb(73, 53, 185));
+    }
+
+    .container-01, .container-02{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px 80px;
+        gap: 70px
+    }
+
+    .container-02{
+        flex-direction: row-reverse;
+    }
+
+    .text-container{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    img{
+        height: 300px;
+    }
+
+    h3{
+        font-size: 35px;
+        text-transform: uppercase;
+        filter: drop-shadow(3px 3px 0 rgb(73, 53, 185));
+        
+    }
+
+    p{
+        font-size: 25px;
+        width: 700px;
+    }
+
+    @media (max-width: 430px){
+
+        .principal-container{
+            width: 97%;
+        }
+
+        .container-01, .container-02{
+            width: 100%;
+            padding: 10px;
+        }
+
+        .container-02{
+            text-align: end;
+        }
+
+        p{
+            font-size: 16px;
+            width: 100%;
+        }
+        img{
+            height: 200px;
+        }
+</style>

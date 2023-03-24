@@ -1,0 +1,65 @@
+---
+export interface Props{
+     claseB:string,
+     claseA:string,
+     href:any,
+     text:string
+}
+
+const { claseB, href, text, claseA } = Astro.props
+---
+
+<button class={claseB}>
+    <a href={href} class={claseA}>{text}</a>
+</button>
+
+<style>
+     *{
+          margin: 0;
+          padding: 0;
+          text-decoration:none;
+     }
+
+    button{
+        background: none;
+        border: none;
+    }
+
+    .default{
+          width: 180px;
+          background-color: rgb(92, 0, 141);
+          color: white;
+          box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
+          text-align: center;
+          border-radius: 10px;
+          font-size: 17px;
+          font-weight: 500;
+          padding: 10px 20px;
+          transition: all .5s;
+     }
+
+     @media (max-width: 430px){
+          .default-01{
+               display: none;
+          }
+     
+     }
+
+     .transparent:hover, .default:hover{
+          background-color:rgb(93, 68, 235);
+          padding: 15px 20px ;
+          border: none;
+     }
+
+     .post-button{
+          position:absolute;
+          right: 0;
+          bottom: 17px;
+     }
+
+     .transparent{
+          background-color: transparent;
+          box-shadow: none;
+          border: 1px solid white;
+     }
+</style>

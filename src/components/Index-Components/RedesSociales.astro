@@ -1,0 +1,63 @@
+---
+
+---
+
+<div>
+    <a href="#">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="#">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
+    <a href="#">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+</div>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+
+    div{
+        position: absolute;
+        bottom: 0;
+        left: 35px;;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 200px;
+        height: 70px;
+    }
+
+    div > a{
+        height: 50px;
+        width: 50px;
+    }
+
+    div > a > i{
+        padding: 5px;
+        height: 35px;
+        font-size: 35px;
+        color: white;
+        transition: height ease-in-out .3s, font-size ease-out .3s, color ease-in-out .3s;
+    }
+
+    div > a > i:hover{
+        height: 40px;
+        font-size: 40px;
+        color: rgb(109, 90, 221);
+
+    }
+
+    @media (max-width: 430px){
+        div{
+            gap: 0px;
+            left: 0px;
+        }
+    }
+
+</style>

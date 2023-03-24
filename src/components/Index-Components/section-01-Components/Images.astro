@@ -1,0 +1,117 @@
+---
+export interface Props{
+    alt: string
+}
+
+const {alt} = Astro.props
+
+
+const posts = await Astro.glob('../../../pages/blog/posts/*.md');
+
+let postPrincipal:any = [];
+
+function postsPrincipals(){
+    return(
+        [...posts]
+        .reverse()
+        .slice(0, 6)
+    )
+}
+
+postPrincipal.push(postsPrincipals());
+
+---
+
+{
+    postPrincipal[0].map((post:any)=>(
+        <div class="principal-container">
+            <a href={post.url} class="text-content">
+                <h3>{post.frontmatter.title}</h3>
+                <p>{post.frontmatter.description}</p>
+            </a>
+            <img class="image" src={post.frontmatter.image} alt={alt}>  
+        </div>
+    ))
+}
+
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .principal-container{
+        position: relative;
+        display: flex;
+        margin: 10px;
+        height: 200px;
+        width: 300px;
+        overflow: hidden;
+    }
+
+
+    .image{
+        height: 200px;
+        width: 300px;
+        object-fit: cover;
+        position: absolute;
+        transition: filter ease-in .3s, padding ease-in .3s;
+    }
+
+    .text-content{
+        position: absolute;
+        color: white;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .8);
+        bottom: 0;
+        padding: 17px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        transition: padding ease-in .3s;
+        z-index: 100;
+        
+    }
+
+    .text-content:hover{
+        padding: 27px 10px;
+        background-color: rgb(93, 68, 235, .8);
+    }
+
+    .text-content:hover ~ .image{
+        filter: blur(3px);
+        padding: 5px;
+        
+    }
+
+    .text-content > h3{
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    .text-content > p{
+        font-size: 14px;
+        font-weight: 300;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    @media (max-width: 430px){
+
+        .text-content{
+            padding: 20px;
+        }
+
+        .text-content:hover{
+            padding: 30px 20px;
+        }
+        
+        .image{
+            width: 100%;
+        }
+    }
+</style>

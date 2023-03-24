@@ -1,0 +1,195 @@
+---
+import LayoutIndex from "../layouts/LayoutIndex.astro";
+import Contact from "../components/Contact-Components/Contact.astro";
+import Header from "../components/Header.astro";
+import RedesSociales from "../components/Index-Components/RedesSociales.astro";
+---
+
+<LayoutIndex title="Contact">
+<div class="principal-container">
+    <Header 
+    about="/T-zone/#about"
+    contact="#"
+    home="/T-zone"
+    blog="/T-zone/blog"
+    />
+    <div class="principal-container__form">
+        <div class="items-container">
+            <div class="title">
+                <h2>T-Zone</h2>
+                <img src="../../public/images/isotipo-TZone-white.svg" alt="iso-tzone" width="50px" height="50px">
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut assumenda neque reiciendis, inventore labore.
+            </p>
+            <div class="rrss">
+                <RedesSociales/>
+            </div>
+        </div>
+        <div class="form-container">
+            <Contact/>
+        </div>
+        <div class="background">
+            <img src="../../public/images/fondo-form.avif" alt="background-image">
+        </div>
+    </div>
+</div>
+</LayoutIndex>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        
+    }
+
+    body{
+        background-color:rgb(13, 13, 51) ;
+    }
+
+    .principal-container{
+        position: relative;
+        background-color: rgb(13, 13, 51);
+        background-image: linear-gradient(
+			0deg, 
+			rgba(0, 0, 0, .3), 
+			rgba(0, 0, 0, .6))
+		,url('../../public/images/Vector_2648.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+        height: 100vh;
+    }
+    
+    .principal-container__form{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 70px;
+        width: 1200px;
+        height: 650px;
+        top: calc(50% - 300px);
+        left: calc(50% - 600px);
+    }
+
+    .background{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        overflow: hidden;
+        box-shadow: 0px 0px 25px rgb(32, 32, 32);
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+    .background > img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        filter: blur(3px);
+    }
+
+
+    .items-container{
+        position: relative;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        width: 400px;
+        height: 90%;
+    }
+
+    p{
+        color: white;
+    }
+
+    .title{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+    }
+
+    .title > h2{
+        font-size: 60px;
+    }
+
+    .title > img{
+        margin-top: 10px;
+    }
+
+    .form-container{
+        position: relative;
+        z-index: 100;
+    }
+
+
+    @media (max-width: 430px){
+        body{
+            background-image: linear-gradient(
+			0deg, 
+			rgba(0, 0, 0, .4), 
+			rgba(0, 0, 0, .7))
+		    ,url('../../public/images/Vector_2648.jpg');
+		    background-repeat: no-repeat;
+		    background-position: center;
+        }
+
+        .principal-container{
+        background-color: transparent;
+        background-image: none;
+        height: auto;
+
+    }
+
+
+        .principal-container__form{
+            flex-direction: column;
+            width: auto;
+            height: auto;
+            top:0;
+            left: 0;
+            margin: 120px 0 20px 0;
+    }
+
+        .background{
+            background-color: transparent;
+            box-shadow: 0px 0px 25px rgb(32, 32, 32, 0);
+
+    }
+
+
+        .background > img{
+            display: none;
+    }
+
+        .items-container{
+            align-items: center;
+            /* top: 80px; */
+    }
+
+        .form-container{
+            /* top: 100px; */
+    }
+
+        p{
+            text-align: center;
+    }
+
+        .rrss{
+            position: absolute;
+            bottom: -70px;
+            left: calc(50% - 100px);
+    }
+
+    }
+
+
+
+
+</style>

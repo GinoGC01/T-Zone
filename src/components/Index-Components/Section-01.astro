@@ -1,0 +1,83 @@
+---
+import ImageSection01 from "./section-01-Components/Images.astro";
+---
+
+<section>
+    <div class="container__content">
+        <div class="img-content">
+
+        <ImageSection01 alt={"image-proyects"}  />
+
+        </div>
+
+        <div class="text-content">
+            <h2>Characteristics of proyect's</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet maiores nihil delectus minima aliquid ipsa suscipit aspernatur est. Beatae hic blanditiis possimus non pariatur deserunt sunt nihil ullam sapiente dignissimos!</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    section{
+        background-color: #060211;
+    }
+
+    .container__content{
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        width: 80%;
+        margin: auto;
+        padding: 50px;
+        gap: 30px;
+
+    /* para editar */
+
+        overflow: hidden;
+    }
+
+    .img-content{
+        width: 1000px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .text-content{
+        width: 1000px;
+    }
+
+    .text-content > h2{
+        font-size:50px;
+        margin-bottom: 30px;
+        filter: drop-shadow(3px 3px 0 rgb(73, 53, 185));
+    }
+
+    .text-content > p {
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    @media (max-width: 430px){
+        .container__content{
+            width: 95%;
+            padding: 40px 0;
+        }
+
+        .text-content > h2{
+            text-align: center;
+        }
+
+        .text-content > p {
+            text-align: center;
+        }
+    }
+    
+
+</style>

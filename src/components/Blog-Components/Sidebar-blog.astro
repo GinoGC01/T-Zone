@@ -1,0 +1,163 @@
+---
+export interface Props{
+    min:number
+}
+const {min} = Astro.props
+
+const posts = await Astro.glob('../../pages/blog/posts/*.md');
+
+
+
+const postFinish = ()=>{
+    
+    let minIndex:any = posts.length - min
+    let maxIndex:any = posts.length
+
+    return(
+    [...posts]
+    .slice(minIndex, maxIndex)
+    .sort(()=>Math.random()>0.5 ? 1 : -1)
+    )   
+}
+
+const sidebarPost = (postFinish());
+
+---
+
+{
+    sidebarPost.map((post:any)=>{
+    const { title, image, description, pubDate, author, id} = post.frontmatter
+    return (  
+    <div class="principal-container__card" id={id}>
+        <div class="content-container">
+                    <p class="posted-by">posted by: {author} in {pubDate} </p>
+                    <img src={image} alt="post img">
+                    <a href={post.url}>
+                        <div class="title-container">
+                            <h3>{title}</h3>
+                            <p>{description}<span></span></p>
+                        </div>    
+                    </a>
+        </div>
+    </div>
+    )
+    })
+    
+}
+
+<style>
+        .principal-container__card{
+            width: 100%;
+            margin:20px 0;
+            padding: 0 10px;
+        }
+
+        .posted-by{
+            color: rgb(176, 176, 176) ;
+            font-size: 15px;
+        }
+
+        .content-container{
+            position: relative;
+            height: 250px;
+        }
+
+        .content-container > img{
+            position: absolute;
+            width: 100%;
+            height: calc(100% - 19px);
+            object-fit: cover;
+        }
+
+        .content-container > a{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+
+        }
+        
+        .title-container{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: rgba(0, 0, 0, .8);
+            padding: 17px 10px;
+            transition: all .3s ease-in-out;
+        }
+
+        .title-container:hover{
+            padding: 25px 10px;
+            background-color:rgb(93, 68, 235, .8);
+        }
+        
+        .title-container > h3{
+            text-transform: uppercase;
+        }
+    
+         .text-content__card{
+             padding: 5px 15px;
+             width: 100%;
+             height: 100px;
+             overflow: hidden;
+         }
+    
+         h3{
+             font-size: 19px;
+             font-weight: bold;
+             color: white;
+         }
+    
+         p{
+             color: white;
+             overflow: hidden;
+             white-space: nowrap;
+             text-overflow: ellipsis;
+         }
+    
+         h3, p, h4 {
+             font-family: 'Roboto', sans-serif;
+         }
+
+         @media (max-width: 430px){
+
+            .content-container{
+                display: flex;
+                height: 180px;
+                border-bottom: 1px solid rgb(93, 68, 235, .8);
+            }
+
+            .content-container > img{
+            position: static;
+            width: 150px;
+            height: 150px;
+            }
+
+            .content-container > a{
+                position: static;
+                width: calc(100% - 150px);
+                height: 150px;
+
+            }
+            
+            .title-container{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 17px 10px;
+                background-color: transparent;
+                transition: all .3s ease-in-out;
+            }
+
+            .posted-by{
+                position: absolute;
+                bottom: 0;
+                padding: 5px 0;
+            }
+
+            p{
+                
+            }
+
+         }
+    
+</style>

@@ -1,9 +1,9 @@
 ---
-export interface Props {
-	title: string;
-}
+import Header from '../components/Header.astro';
+import SidebarBlog from '../components/Blog-Components/Sidebar-blog.astro';
+import Footer from '../components/Footer.astro';
+const posts = await Astro.glob('../pages/blog/posts/*.md');
 
-const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -12,24 +12,203 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<script src="https://kit.fontawesome.com/755623a2e2.js" crossorigin="anonymous"></script>
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>T Zone - Post</title>
 	</head>
 	<body>
-		<slot />
+		<Header 
+			about="/T-zone/#about"
+			contact="/T-zone/Contact"
+			home="/T-zone/"
+			blog="../"
+		/>
+		<div class="principal-container">
+			<div class="background"></div>
+			<div class="news">
+				<main id="principal-content">
+					<slot />
+				</main>
+				<div class="sidebar-blog">
+					<h3>Similar News</h3>
+					<SidebarBlog min={posts.length}/>
+				</div>
+			</div>
+		</div>
+		<Footer/>
+
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+
+	*{
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+		box-sizing: border-box;
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		font-family: 'Roboto', sans-serif;
+		background-color: #0e0429;
+		color: beige;
 	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+
+
+	.principal-container{
+		display: flex;
+		flex-direction: column;
 	}
+
+	.background{
+		height: 500px;
+		position: absolute;
+		width: 100%;
+		background-image: linear-gradient(0deg, rgba(0,0,0,.5), rgba(0,0,0,.5)),
+		url("../../public/images/Vector_2648.jpg");
+		background-size: cover;
+		filter: blur(2px);
+
+	}
+
+	.news{
+		position: relative;
+		width: 80%;
+		margin: 130px auto 20px auto;
+		display: grid;
+        grid-template-columns: 1fr 20em;
+        grid-template-rows: 40px 1fr;
+		gap: 20px;
+		border-left: 1px solid white;
+		border-right: 1px solid white;
+		padding-right: 50px;
+		
+	}
+
+	#principal-content{
+		grid-column: 1/2;
+        grid-row: 2/3;
+		position: relative;
+		margin: 0 auto;
+		width: 1000px;
+		padding: 20px;
+		background-color: #14063d;
+		box-shadow:0 0 10px rgba(255, 255, 255, .1);
+	}
+
+	.sidebar-blog{
+		grid-column: 2/3;
+        grid-row: 2/3;
+		background-image: linear-gradient(90deg, rgba(8, 2, 31, 0.5), transparent);
+		width: 350px;
+		padding: 0 25px;
+	}
+
+	#principal-content > p > img{
+		width: 100%;
+		height: 550px;
+		object-fit: cover;
+		margin-bottom: 30px;
+	}
+
+	#principal-content > h1{
+		position: absolute;
+		font-size: 37px;
+		top: calc(570px - 120px);
+		padding: 20px 30px;
+		background-color: rgba(0, 0, 0, .8);
+		width: 960px;
+		height: 120px;
+	}
+
+	#principal-content > h3{
+		position: absolute;
+		height: 25px;
+		top: calc(570px - 160px);
+		left: 0px;
+		background-color: #4a028d;
+		color: rgb(180, 180, 180);
+		padding: 0 30px;
+		box-shadow: 4px 1px 5px rgba(255, 255, 255, .1);
+	}
+
+	 li{
+		list-style: none;
+	}
+
+	#principal-content > a{
+		text-decoration: none;
+	}
+
+	@media (max-width: 430px){
+		.principal-container{
+			width: 100vw;
+		}
+
+		.background{
+			background-repeat: no-repeat;
+			background-position: center;
+
+		}
+		
+		.news{
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			padding: 0;
+			border-left: none;
+			border-right: none;
+
+		}
+
+		#principal-content{
+			width: 95%;
+			padding: 5px 5px 0 5px;
+			background-color: transparent;
+			box-shadow:none;
+		}
+		
+		#principal-content > h1{
+			position: relative;
+			width: auto;
+			height: auto;
+			font-size: 30px;
+			top: 0px;
+			padding: 20px 5px;
+			background-color: rgba(0, 0, 0, .0);
+			filter: drop-shadow(3px 2px 0 rgb(94, 16, 167));
+			text-transform: uppercase;
+			
+		}
+
+		#principal-content > h3{
+			width: 350px;
+			font-size: 15px;
+			padding: 0 auto;
+			height: auto;
+			top: 350px;
+			box-shadow: none;
+		}
+
+		#principal-content > p > img{
+			width: 100%;
+			height: 350px;
+			object-fit: cover;
+			margin: 30px 0;
+		}
+
+
+		.sidebar-blog{
+			width: 100%;
+			background-color: #14063d;
+			padding-top: 30px;
+		}
+
+		.sidebar-blog > h3{
+			font-size: 30px;
+			filter: drop-shadow(3px 2px 0 rgb(94, 16, 167));
+		}
+	}
+
 </style>
