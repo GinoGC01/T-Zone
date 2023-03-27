@@ -4,9 +4,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     site: 'https://ginogc01.github.io',
     base: '/T-Zone',
-    buildOptions: {
-        build: {
+     build: {
             assets: 'assets'
           }
-      },
 });
