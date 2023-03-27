@@ -3,12 +3,12 @@ id: 6
 title: Mi sexto posteo
 author: Astro Learner
 description: "I had some challenges, but asking in the community really helped!"
-image: '../../../../public/images/iphone.jpg'
+image: 'images/iphone.jpg'
 pubDate: '2022-07-15'
 tags: ["astro", "learning in public", "setbacks", "community"]
 layout: ../../../layouts/Layout.astro
 ---
-![imagen-post](../../../../public/images/xiaomi.jpg)
+![imagen-post](images/xiaomi.jpg)
 
 # titulo de pruba para la página
 
@@ -20,11 +20,11 @@ Phasellus in velit quam. Suspendisse sagittis felis nunc, eu faucibus risus fini
 
 Praesent convallis volutpat nisi, eu hendrerit mauris. Quisque condimentum, justo sed aliquam faucibus, libero magna bibendum sem, nec fringilla ipsum tortor ut neque. Maecenas convallis a quam id elementum. Etiam at lacus tempor, commodo lectus a, dictum nunc. Duis rutrum cursus varius. Duis in condimentum magna. Pellentesque at molestie turpis, condimentum tristique risus. Mauris commodo aliquet velit, a sollicitudin ipsum placerat ac. Suspendisse nec auctor mi. Quisque urna libero, convallis ut dapibus vestibulum, venenatis ac sem. Duis a purus enim. Quisque placerat nibh sagittis leo rutrum, a pulvinar lacus vehicula.
 
-![imagen-post](../../../../public/images/xiaomi.jpg)
+![imagen-post](images/xiaomi.jpg)
 
 Sed quam nunc, accumsan non tellus ut, iaculis imperdiet libero. Nulla et neque elementum eros ultricies tincidunt at vel odio. Vestibulum lobortis ullamcorper nibh, eget hendrerit turpis tincidunt eu. Sed quam elit, tincidunt ac hendrerit sed, dictum a lectus. Donec feugiat non massa nec sodales. Quisque vel dolor pharetra, hendrerit tellus at, dignissim massa. Morbi accumsan faucibus tortor, quis venenatis urna tempus sed. Sed in elementum lorem. Mauris auctor tincidunt nisi, fermentum finibus erat tincidunt eget. Praesent tempus, purus eget lobortis dignissim, justo quam dictum mauris, quis rutrum magna lorem sit amet dui. Praesent pharetra nulla nunc, vitae eleifend dolor lobortis varius. Curabitur semper justo ligula, id iaculis justo consectetur sit amet. Fusce finibus, ligula vitae finibus imperdiet, velit nulla mollis enim, eget porttitor lorem est a nunc.
 
-![imagen-post](../../../../public/images/xiaomi.jpg)
+![imagen-post](images/xiaomi.jpg)
 
 Duis a velit tempor, tincidunt lorem vitae, fermentum ligula. Nulla facilisi. Etiam velit velit, euismod eu ligula quis, ornare placerat ante. Mauris eget lorem metus. Pellentesque lobortis consequat ante at cursus. Donec et mauris egestas, tincidunt nunc nec, dignissim nunc. Fusce ut maximus est, et pulvinar nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at fermentum ligula, vel euismod dui.
 

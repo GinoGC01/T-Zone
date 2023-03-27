@@ -4,11 +4,11 @@ title: 'My First Blog Post'
 pubDate: '2022-07-01'
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
-image: '../../../../public/images/section-01-svg/01.jpg'
+image: 'images/section-01-svg/01.jpg'
 tags: ["astro", "blogging", "learning in public"]
 layout: ../../../layouts/Layout.astro
 ---
-![imagen-post](../../../../public/images/section-01-svg/01.jpg)
+![imagen-post](images/section-01-svg/01.jpg)
 
 # My First Blog Post
 
