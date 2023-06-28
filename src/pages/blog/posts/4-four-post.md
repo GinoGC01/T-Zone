@@ -3,12 +3,12 @@ id: 4
 title: My Fourty Blog Post
 author: Astro Learner
 description: "I had some challenges, but asking in the community really helped!"
-image: 'images/section-01-svg/04.jpg'
+image: '../../../../images/iphone.jpg'
 pubDate: '2022-07-15'
 tags: ["astro", "learning in public", "setbacks", "community"]
 layout: ../../../layouts/Layout.astro
 ---
-![imagen-post](images/section-01-svg/04.jpg)
+![imagen-post](../../images/iphone.jpg)
 
 # titulo de pruba para la página
 

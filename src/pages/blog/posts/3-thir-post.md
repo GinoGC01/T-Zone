@@ -3,12 +3,12 @@ id: 3
 title: My Third Blog Post
 author: Astro Learner
 description: "I had some challenges, but asking in the community really helped!"
-image: 'images/section-01-svg/03.jpg'
+image: '../../images/iphone.jpg'
 pubDate: '2022-07-15'
 tags: ["astro", "learning in public", "setbacks", "community"]
 layout: ../../../layouts/Layout.astro
 ---
-![imagen-post](images/section-01-svg/03.jpg)
+![imagen-post](../../images/iphone.jpg)
 
 # titulo de pruba para la página
 

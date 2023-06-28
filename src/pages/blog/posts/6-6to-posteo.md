@@ -3,12 +3,12 @@ id: 6
 title: Mi sexto posteo
 author: Astro Learner
 description: "I had some challenges, but asking in the community really helped!"
-image: 'images/iphone.jpg'
+image: '../../images/iphone.jpg'
 pubDate: '2022-07-15'
 tags: ["astro", "learning in public", "setbacks", "community"]
 layout: ../../../layouts/Layout.astro
 ---
-![imagen-post](images/xiaomi.jpg)
+![imagen-post](../../images/xiaomi.jpg)
 
 # titulo de pruba para la página
 
